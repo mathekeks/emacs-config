@@ -23,7 +23,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("c5fce1319d0407d23d7b52de0d961f57bafdee287017c09b1cf38a7a4d5e719f" default)))
+    ("59ed0fd7ecc61fb32960c56f5b1c5d7f21f2d4567c48b7701f7de3ed9ef0ef51" "c5fce1319d0407d23d7b52de0d961f57bafdee287017c09b1cf38a7a4d5e719f" default)))
  '(package-selected-packages
    (quote
     (go-mode go-scratch projectile markdown-mode evil-magit evil-leader use-package))))
