@@ -91,6 +91,7 @@ my data, like GIT.
 Load my own color theme
 #+begin_src emacs-lisp
 ;(load-theme 'kolors)
+(add-hook 'after-init-hook (lambda () (load-theme 'kolors)))
 #+end_src
 Highlight matching paranthesis.
 #+begin_src emacs-lisp
@@ -99,7 +100,7 @@ Highlight matching paranthesis.
   
 
 Mark all parts of lines that are longer than 80 cahracters. This helps keeping
-text/code files nice. I do not think long lines are allways bad, but shorter 
+utext/code files nice. I do not think long lines are allways bad, but shorter 
 then 80 characters does help with readability.
 *ESPECIALLY WITH TEXT!*
 #+begin_src emacs-lisp
@@ -126,6 +127,22 @@ Full screen is nice for a distraction free environment.
 (global-set-key (kbd "<f7>") 'toggle-frame-fullscreen)
 #+end_src
 * Packages
+** Abbrev-mode
+Abbrev-mode is a lot simpler than snippets but I find it quite sufficient.
+It is mainly used for LaTeX and org-mode stuff.
+
+Allways start abbrev-mode for every buffer
+#+BEGIN_SRC emacs-lisp
+(setq default-abbrev-mode t)
+#+END_SRC
+
+Load my own abbrevs from this file
+#+BEGIN_SRC emacs-lisp
+(setq abbrev-file-name "~/.emacs.d/default_abbrevs")
+(if (file-exists-p abbrev-file-name)
+        (quietly-read-abbrev-file))
+#+END_SRC
+
 ** Org-mode
 Configuration of the all mighty org-mode
 
