@@ -184,12 +184,13 @@ I want my leader to be <SPACE>.
 Add some of my own key bindings. This is stuff i often use.
 #+begin_src emacs-lisp
 (evil-leader/set-key
+  "q" 'save-buffers-kill-terminal'
   "F" 'projectile-find-file
   "f" 'find-file
   "j" 'imenu
   "w" 'save-buffer
   "b" 'switch-to-buffer
-  "k" 'kill-this-buffer
+  "d" 'kill-this-buffer
   "e" 'eval-region
   "E" 'eval-buffer)
 (evil-leader/set-key-for-mode 'c-mode "j" 'imenu)
@@ -226,6 +227,20 @@ Automatically use writeroom mode if editing text, c code, emacs code or latex.
 ;;         (global-writeroom-mode 1)))
 #+end_src
 
+** adoc mode
+This mode helps with editing asciidoc files.
+When a file name ends with /.ad/, /.adoc/ or /.asciidoc/ markdown-mode is loaded for
+that buffer. 
+#+begin_src emacs-lisp
+(use-package adoc-mode
+:ensure t
+:config (progn
+         (autoload 'adoc-mode "adoc-mode"
+                  "Major mode for editing AsciiDoc files" t)
+         (add-to-list 'auto-mode-alist '("\\.adoc\\'" . adoc-mode))
+         (add-to-list 'auto-mode-alist '("\\.ad\\'" . adoc-mode))
+         (add-to-list 'auto-mode-alist '("\\.asciidoc\\'" . adoc-mode))))
+#+end_src
 ** markdown mode
 This mode helps with editing markdown files.
 When a file name ends with /.md/ or /.markdown/ markdown-mode is loaded for
@@ -251,6 +266,12 @@ Why did i want this ?
 :ensure t
 :config (projectile-mode 1))
 #+end_src
+** Groovy mode
+#+begin_src emacs-lisp
+(use-package groovy-mode
+:ensure t
+:config (groovy-mode))
+#+end_src
 ** nodis (NO DIStraction)
 This is my own little creation. This is somewhat like writeroom mode, but 
 adapted to my personal needs.
@@ -261,3 +282,9 @@ adapted to my personal needs.
 ** origami
 Ths mode is supposed to add vim like folding to emacs, but it does not
 work for me. Maybe I give it another chance later.
+** edger mode
+#+begin_src emacs-lisp
+(use-package ledger-mode
+:ensure t
+:config (ledger-mode))
+#+end_src

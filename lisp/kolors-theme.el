@@ -64,7 +64,7 @@
       (c-bg-special "ivory")
       (c-bg-error "yellow")
       (c-mark1-dark "RoyalBlue3")
-      (c-mark1 "RoyalBlue2")
+      (c-mark1 "SkyBlue2")
       (c-mark1-light "SkyBlue1")
       (c-mark2-dark"SeaGreen4")
       (c-mark2 "SeaGreen3")
