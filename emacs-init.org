@@ -91,7 +91,7 @@ my data, like GIT.
 Load my own color theme
 #+begin_src emacs-lisp
 ;(load-theme 'kolors)
-(add-hook 'after-init-hook (lambda () (load-theme 'kolors)))
+;(add-hook 'after-init-hook (lambda () (load-theme 'kolors)))
 #+end_src
 Highlight matching paranthesis.
 #+begin_src emacs-lisp
